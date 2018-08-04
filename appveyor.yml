@@ -15,11 +15,15 @@ dotnet_csproj:
   informational_version: '{version}'
 before_build:
 - ps: >-
+    cd ClientApp
+
     yarn install
 
     yarn webpack --config webpack.config.vendor.js
 
     yarn webpack
+
+    cd ..
 
     dotnet restore
 build:
