@@ -16,7 +16,7 @@ dotnet_csproj:
   informational_version: '{version}'
 before_build:
 - ps: >-
-    cd ClientApp
+    cd src/ClientApp
 
     yarn install
 
@@ -26,7 +26,7 @@ before_build:
 
     dotnet restore
 build:
-  project: ./dotnetCore.csproj
+  project: ./src/dotnetCore.csproj
   publish_aspnet_core: true
   verbosity: minimal
 notifications:
